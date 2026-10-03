@@ -3,7 +3,7 @@
  */
 
 // Human-readable role names
-export const roleMap = { 
+export const role = { 
     "leader": "Leader", 
     "coLeader": "Co-Leader", 
     "admin": "Elder", 

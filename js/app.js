@@ -6,22 +6,10 @@ import { roleWeight, parseCoCDate } from './constants.js';
 import { 
     fetchClanData, 
     fetchMembersIndex, 
-    fetchHistoricalMembers, 
-    fetchWarIndex, 
-    fetchWarData,
-    fetchRaidIndex,
-    fetchRaidData
-} from './api.js';
+} from './members.js';
 import { 
-    renderMembers, 
-    renderWarHistory, 
-    renderWarDetail, 
+    renderMembers,
     renderAbout,
-    renderRaidSummary,
-    renderRaidAttacks,
-    renderRaidDefenses,
-    setRaidSort,
-    resetRaidSort
 } from './render.js';
 import { renderCharts } from './charts.js';
 
@@ -29,16 +17,6 @@ import { renderCharts } from './charts.js';
 let allMembers = [];           
 let latestClanData = null;     
 let currentRoleFilter = 'all'; 
-let currentWarFilter = 'all';  
-let fullWarHistory = [];       
-let fullRaidHistory = [];      
-let availableMemberDates = []; 
-let fp = null;                 
-let raidFp = null;             
-let activeWarFilename = null;  
-let warHistoryPickers = []; 
-let currentRaidIndex = 0;      
-
 /**
  * UI View Controllers
  */
@@ -52,43 +30,13 @@ function switchView(viewId, updateHash = true) {
     if (updateHash) window.location.hash = viewId;
 }
 
-function switchSubView(subviewId, updateHash = true) {
-    const isHistory = subviewId === 'history';
-    document.getElementById('warListView')?.classList.toggle('hidden', !isHistory);
-    document.getElementById('warStatsView')?.classList.toggle('hidden', isHistory);
-    document.getElementById('warDetailView')?.classList.add('hidden');
-    document.getElementById('warHistoryControls')?.classList.toggle('hidden', !isHistory);
-    document.getElementById('warStatsControls')?.classList.toggle('hidden', isHistory);
-    document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(`subtab-${subviewId}`)?.classList.add('active');
-    if (updateHash) window.location.hash = `war/${subviewId}`;
-}
-
-function switchRaidSubView(subviewId, updateHash = true) {
-    document.getElementById('raidSummaryView')?.classList.toggle('hidden', subviewId !== 'summary');
-    document.getElementById('raidAttacksView')?.classList.toggle('hidden', subviewId !== 'attacks');
-    document.getElementById('raidDefensesView')?.classList.toggle('hidden', subviewId !== 'defenses');
-    document.querySelectorAll('#section-raids .sub-tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(`raid-subtab-${subviewId}`)?.classList.add('active');
-    const raid = fullRaidHistory[currentRaidIndex];
-    if (raid) {
-        if (subviewId === 'summary') renderRaidSummary(raid, allMembers);
-        else if (subviewId === 'attacks') renderRaidAttacks(raid);
-        else if (subviewId === 'defenses') renderRaidDefenses(raid);
-    }
-    if (updateHash) window.location.hash = `raids/${subviewId}`;
-}
-
+//berapa banyak member dalam clan
 function updateMemberCount(count) {
     const el = document.getElementById('memberCount');
     if (el) el.innerText = `${count} / 50`;
 }
 
-function updateWarCount(filtered, total) {
-    const el = document.getElementById('warCount');
-    if (el) el.innerText = `${filtered} / ${total}`;
-}
-
+//badge foto clan dan nama clan
 function updateHeader(name, badgeUrl) {
     const title = document.getElementById('pageTitle');
     const badge = document.getElementById('clanBadge');
@@ -99,34 +47,15 @@ function updateHeader(name, badgeUrl) {
     }
 }
 
-window.syncData = async () => {
-    const btns = document.querySelectorAll('.sync-btn');
-    btns.forEach(b => b.classList.add('syncing'));
-    try {
-        await init();
-        if (activeWarFilename) {
-            const warData = fullWarHistory.find(w => w.filename === activeWarFilename);
-            if (warData) renderWarDetail(warData, fullWarHistory);
-        }
-    } catch (e) { console.error("Sync failed", e); } finally {
-        setTimeout(() => btns.forEach(b => b.classList.remove('syncing')), 500);
-    }
-};
 
 function preRoute() {
     const hash = window.location.hash.replace('#', '');
     const tabAbout = document.getElementById('tab-about');
     const tabMembers = document.getElementById('tab-members');
-    const tabWar = document.getElementById('tab-war');
-    const tabStats = document.getElementById('tab-stats');
-    const tabRaids = document.getElementById('tab-raids');
-    if (!tabAbout || !tabMembers || !tabWar || !tabStats || !tabRaids) return;
-    [tabAbout, tabMembers, tabWar, tabStats, tabRaids].forEach(t => t.classList.remove('active'));
+    if (!tabAbout || !tabMembers) return;
+    [tabAbout, tabMembers].forEach(t => t.classList.remove('active'));
     if (!hash || hash === 'about') tabAbout.classList.add('active');
     else if (hash === 'members') tabMembers.classList.add('active');
-    else if (hash.startsWith('war')) tabWar.classList.add('active');
-    else if (hash === 'stats') tabStats.classList.add('active');
-    else if (hash.startsWith('raids')) tabRaids.classList.add('active');
 }
 
 async function init() {
@@ -156,21 +85,7 @@ async function init() {
             onChange: function(selectedDates, dateStr) { handleMemberDateChange(dateStr); }
         });
     } catch (e) { console.warn("Could not setup member date filters.", e); }
-
-    try {
-        const warIndex = await fetchWarIndex();
-        const warDataPromises = warIndex.reverse().map(async (filename) => {
-            try {
-                const data = await fetchWarData(filename);
-                return { ...data, filename };
-            } catch (e) { return null; }
-        });
-        fullWarHistory = (await Promise.all(warDataPromises)).filter(w => w !== null);
-        filterWarHistory();
-        setupWarHistoryPickers();
-    } catch (e) { console.error("Could not load war history.", e); }
-
-    try {
+      try {
         const raidIndex = await fetchRaidIndex();
         const raidDataPromises = raidIndex.reverse().map(async (filename) => {
             try {
@@ -186,110 +101,10 @@ async function init() {
     } catch (e) { console.error("Could not load raid history.", e); handleInitialRoute(); }
 }
 
-function setupRaidCalendar() {
-    const calendarEl = document.getElementById('raidWeekendCalendar');
-    if (!calendarEl || fullRaidHistory.length === 0) return;
-
-    const getDateStr = (d) => {
-        const year = d.getUTCFullYear();
-        const month = String(d.getUTCMonth() + 1).padStart(2, '0');
-        const day = String(d.getUTCDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`;
-    };
-
-    const enabledDates = [];
-    fullRaidHistory.forEach(r => {
-        let current = parseCoCDate(r.startTime);
-        const end = parseCoCDate(r.endTime);
-        while (current <= end) {
-            enabledDates.push(getDateStr(current));
-            current.setUTCDate(current.getUTCDate() + 1);
-        }
-    });
-
-    if (raidFp) raidFp.destroy();
-    raidFp = flatpickr(calendarEl, {
-        enable: enabledDates,
-        dateFormat: "Y-m-d",
-        defaultDate: enabledDates[0],
-        disableMobile: true,
-        onChange: (selectedDates) => {
-            if (selectedDates.length === 0) return;
-            const sel = selectedDates[0];
-            const selectedStr = `${sel.getFullYear()}-${String(sel.getMonth() + 1).padStart(2, '0')}-${String(sel.getDate()).padStart(2, '0')}`;
-            
-            const idx = fullRaidHistory.findIndex(r => {
-                let check = parseCoCDate(r.startTime);
-                const rEnd = parseCoCDate(r.endTime);
-                while (check <= rEnd) {
-                    if (getDateStr(check) === selectedStr) return true;
-                    check.setUTCDate(check.getUTCDate() + 1);
-                }
-                return false;
-            });
-
-            if (idx !== -1) {
-                currentRaidIndex = idx;
-                const activeSubTab = document.querySelector('#section-raids .sub-tab-btn.active')?.id.replace('raid-subtab-', '') || 'summary';
-                switchRaidSubView(activeSubTab);
-            }
-        }
-    });
-
-    currentRaidIndex = 0;
-    switchRaidSubView('summary', false);
-}
-
-function setupWarHistoryPickers() {
-    warHistoryPickers.forEach(p => p.destroy());
-    const startEl = document.getElementById('warStartDate');
-    const endEl = document.getElementById('warEndDate');
-    if (!startEl || !endEl) return;
-    const sP = flatpickr(startEl, { 
-        dateFormat: "Y-m-d", 
-        disableMobile: true,
-        onChange: (selectedDates) => {
-            if (selectedDates.length > 0) eP.set('minDate', selectedDates[0]);
-            filterWarHistory(); 
-        } 
-    });
-    const eP = flatpickr(endEl, { 
-        dateFormat: "Y-m-d", 
-        disableMobile: true,
-        onChange: (selectedDates) => {
-            if (selectedDates.length > 0) sP.set('maxDate', selectedDates[0]);
-            filterWarHistory(); 
-        } 
-    });
-    warHistoryPickers = [sP, eP];
-}
-
 function handleInitialRoute() {
     const hash = window.location.hash.replace('#', '');
     if (!hash || hash === 'about') { switchView('about', false); return; }
     if (hash === 'members') { switchView(hash, false); }
-    else if (hash === 'stats') {
-        switchView('stats', false);
-        renderCharts(fullWarHistory, document.getElementById('statsTimeRange')?.value || 'month');
-    }
-    else if (hash.startsWith('raids')) {
-        const parts = hash.split('/');
-        const subview = parts[1] || 'summary';
-        switchView('raids', false);
-        switchRaidSubView(subview, false);
-    }
-    else if (hash.startsWith('war/')) {
-        const parts = hash.split('/');
-        let detailFile = parts[2];
-        if (detailFile && !detailFile.endsWith('.json')) detailFile += '.json';
-        switchView('war', false);
-        if (detailFile) loadWarDetail(detailFile, false); 
-    } else if (hash === 'war') { switchView('war', false); }
-}
-
-function bindAboutPageEvents() {
-    const btn = document.getElementById('viewWarHistoryBtn');
-    if (btn) btn.onclick = () => { switchView('war'); };
 }
 
 async function handleMemberDateChange(dateValue, shouldFetch = true) {
@@ -304,36 +119,7 @@ async function handleMemberDateChange(dateValue, shouldFetch = true) {
     }
 }
 
-function filterWarHistory() {
-    const startVal = document.getElementById('warStartDate')?.value.replace(/-/g, '') || '';
-    const endVal = document.getElementById('warEndDate')?.value.replace(/-/g, '') || '';
-    let filtered = fullWarHistory.filter(w => {
-        const warDate = w.startTime.substring(0, 8);
-        if (startVal && warDate < startVal) return false;
-        if (endVal && warDate > endVal) return false;
-        
-        if (currentWarFilter !== 'all') {
-            const clanStars = w.clan.stars || 0;
-            const oppStars = w.opponent.stars || 0;
-            const clanDest = w.clan.destructionPercentage || 0;
-            const oppDest = w.opponent.destructionPercentage || 0;
-            
-            let result = 'draw';
-            if (clanStars > oppStars) result = 'victory';
-            else if (clanStars < oppStars) result = 'loss';
-            else {
-                if (clanDest > oppDest) result = 'victory';
-                else if (clanDest < oppDest) result = 'loss';
-            }
-            
-            if (result !== currentWarFilter) return false;
-        }
-        
-        return true;
-    });
-    updateWarCount(filtered.length, fullWarHistory.length);
-    renderWarHistory(filtered);
-}
+//Role members
 
 function updateDisplay() {
     const sortKey = document.getElementById('sortBy')?.value || 'league';
@@ -355,40 +141,6 @@ function setRoleFilter(role, btn) {
     document.querySelectorAll('#section-members .sub-tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active'); updateDisplay();
 }
-
-function setWarResultFilter(filter, btn) {
-    currentWarFilter = filter;
-    document.querySelectorAll('#section-war .sub-tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    filterWarHistory();
-}
-
-async function loadWarDetail(filename, updateHash = true) {
-    const warData = fullWarHistory.find(w => w.filename === filename);
-    if (warData) {
-        activeWarFilename = filename;
-        document.getElementById('warMainHeader')?.classList.add('hidden');
-        document.getElementById('warListView')?.classList.add('hidden');
-        document.getElementById('warStatsView')?.classList.add('hidden');
-        document.getElementById('warDetailView')?.classList.remove('hidden');
-        document.getElementById('warHistoryControls')?.classList.add('hidden');
-        renderWarDetail(warData, fullWarHistory);
-        if (updateHash) window.location.hash = `war/details/${filename.replace('.json', '')}`;
-    }
-}
-
-function showWarList() {
-    activeWarFilename = null;
-    switchView('war', false);
-    document.getElementById('warMainHeader')?.classList.remove('hidden');
-    document.getElementById('warListView')?.classList.remove('hidden');
-    document.getElementById('warDetailView')?.classList.add('hidden');
-    document.getElementById('warHistoryControls')?.classList.remove('hidden');
-    window.location.hash = `war`;
-}
-
-window.loadWarDetail = loadWarDetail;
-
 document.addEventListener('DOMContentLoaded', () => {
     preRoute(); init();
     document.getElementById('tab-about')?.addEventListener('click', () => { switchView('about'); if (latestClanData) renderAbout(latestClanData); bindAboutPageEvents(); });
@@ -398,37 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#section-members .sub-tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelector('#section-members [data-role="all"]')?.classList.add('active');
         updateDisplay();
-    });
-    document.getElementById('tab-war')?.addEventListener('click', () => { 
-        showWarList();
-        currentWarFilter = 'all';
-        document.querySelectorAll('#section-war .sub-tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector('#section-war [data-war-filter="all"]')?.classList.add('active');
-        filterWarHistory();
-    });
-    document.getElementById('tab-stats')?.addEventListener('click', () => { 
-        switchView('stats'); 
-        renderCharts(fullWarHistory, document.getElementById('statsTimeRange')?.value || 'month');
-    });
-    document.getElementById('tab-raids')?.addEventListener('click', () => { switchView('raids'); switchRaidSubView('summary'); });
-    document.getElementById('raid-subtab-summary')?.addEventListener('click', () => switchRaidSubView('summary'));
-    document.getElementById('raid-subtab-attacks')?.addEventListener('click', () => switchRaidSubView('attacks'));
-    document.getElementById('raid-subtab-defenses')?.addEventListener('click', () => switchRaidSubView('defenses'));
-    
-    document.addEventListener('click', (e) => {
-        const btn = e.target.closest('.raid-sort-btn');
-        if (btn) {
-            const table = btn.getAttribute('data-table');
-            const sortKey = btn.getAttribute('data-sort');
-            setRaidSort(table, sortKey);
-            switchRaidSubView(table, false);
-        }
-    });
-
-    document.getElementById('resetRaidSort')?.addEventListener('click', () => {
-        const activeSubTab = document.querySelector('#section-raids .sub-tab-btn.active')?.id.replace('raid-subtab-', '') || 'summary';
-        resetRaidSort(activeSubTab);
-        switchRaidSubView(activeSubTab, false);
     });
 
     document.getElementById('statsTimeRange')?.addEventListener('change', (e) => { renderCharts(fullWarHistory, e.target.value); });
@@ -441,25 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('sortBy').value = 'league';
         updateDisplay();
     });
-    document.getElementById('resetWarFilters')?.addEventListener('click', () => {
-        const start = document.getElementById('warStartDate');
-        const end = document.getElementById('warEndDate');
-        if (start) start.value = '';
-        if (end) end.value = '';
-        warHistoryPickers.forEach(p => { p.clear(); p.set('minDate', null); p.set('maxDate', null); });
-        currentWarFilter = 'all';
-        document.querySelectorAll('#section-war .sub-tab-btn').forEach(b => b.classList.remove('active'));
-        document.querySelector('#section-war [data-war-filter="all"]')?.classList.add('active');
-        filterWarHistory();
-    });
     document.querySelectorAll('#section-members .sub-tab-btn').forEach(btn => { 
         if (btn.hasAttribute('data-role')) {
             btn.addEventListener('click', () => setRoleFilter(btn.getAttribute('data-role'), btn)); 
-        }
-    });
-    document.querySelectorAll('#section-war .sub-tab-btn').forEach(btn => {
-        if (btn.hasAttribute('data-war-filter')) {
-            btn.addEventListener('click', () => setWarResultFilter(btn.getAttribute('data-war-filter'), btn));
         }
     });
     document.addEventListener('click', () => { document.querySelectorAll('.info-tooltip').forEach(t => t.classList.remove('active')); });
