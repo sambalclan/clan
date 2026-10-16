@@ -7,14 +7,16 @@ on:
 
 permissions:
   contents: write
-
 jobs:
   update-clan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-
+        
+      - name: Check GitHub Runner IP
+        run: curl -s https://api.ipify.org
+  
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
