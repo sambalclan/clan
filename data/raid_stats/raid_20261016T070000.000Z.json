@@ -2,20 +2,20 @@
     "state": "ongoing",
     "startTime": "20261016T070000.000Z",
     "endTime": "20261019T070000.000Z",
-    "capitalTotalLoot": 41402,
-    "raidsCompleted": 0,
-    "totalAttacks": 18,
-    "enemyDistrictsDestroyed": 5,
+    "capitalTotalLoot": 61642,
+    "raidsCompleted": 1,
+    "totalAttacks": 26,
+    "enemyDistrictsDestroyed": 8,
     "offensiveReward": 0,
     "defensiveReward": 0,
     "members": [
         {
             "tag": "#GPCYQG89Y",
             "name": "kutur18",
-            "attacks": 3,
+            "attacks": 6,
             "attackLimit": 5,
-            "bonusAttackLimit": 0,
-            "capitalResourcesLooted": 6910
+            "bonusAttackLimit": 1,
+            "capitalResourcesLooted": 13157
         },
         {
             "tag": "#R2YVRJRYY",
@@ -32,6 +32,22 @@
             "attackLimit": 5,
             "bonusAttackLimit": 1,
             "capitalResourcesLooted": 12508
+        },
+        {
+            "tag": "#QYU9CCQ28",
+            "name": "Oni Mask",
+            "attacks": 4,
+            "attackLimit": 5,
+            "bonusAttackLimit": 1,
+            "capitalResourcesLooted": 12453
+        },
+        {
+            "tag": "#R8YLLUPCY",
+            "name": "in another life",
+            "attacks": 1,
+            "attackLimit": 5,
+            "bonusAttackLimit": 0,
+            "capitalResourcesLooted": 1540
         },
         {
             "tag": "#G9CQG8R0Y",
@@ -54,18 +70,52 @@
                     "medium": "https://api-assets.clashofclans.com/badges/200/r0uIqJyxQmN2RTlvTmGZ4ly5dGWpYUeNeWMdANGntzs.png"
                 }
             },
-            "attackCount": 18,
+            "attackCount": 24,
             "districtCount": 7,
-            "districtsDestroyed": 5,
+            "districtsDestroyed": 7,
             "districts": [
                 {
                     "id": 70000000,
                     "name": "Capital Peak",
                     "districtHallLevel": 7,
-                    "destructionPercent": 0,
-                    "stars": 0,
-                    "attackCount": 0,
-                    "totalLooted": 0
+                    "destructionPercent": 100,
+                    "stars": 3,
+                    "attackCount": 4,
+                    "totalLooted": 9656,
+                    "attacks": [
+                        {
+                            "attacker": {
+                                "tag": "#QYU9CCQ28",
+                                "name": "Oni Mask"
+                            },
+                            "destructionPercent": 100,
+                            "stars": 3
+                        },
+                        {
+                            "attacker": {
+                                "tag": "#QYU9CCQ28",
+                                "name": "Oni Mask"
+                            },
+                            "destructionPercent": 81,
+                            "stars": 2
+                        },
+                        {
+                            "attacker": {
+                                "tag": "#GPCYQG89Y",
+                                "name": "kutur18"
+                            },
+                            "destructionPercent": 63,
+                            "stars": 1
+                        },
+                        {
+                            "attacker": {
+                                "tag": "#GPCYQG89Y",
+                                "name": "kutur18"
+                            },
+                            "destructionPercent": 36,
+                            "stars": 0
+                        }
+                    ]
                 },
                 {
                     "id": 70000001,
@@ -114,11 +164,27 @@
                     "id": 70000002,
                     "name": "Wizard Valley",
                     "districtHallLevel": 3,
-                    "destructionPercent": 48,
-                    "stars": 0,
-                    "attackCount": 1,
-                    "totalLooted": 2865,
+                    "destructionPercent": 100,
+                    "stars": 3,
+                    "attackCount": 3,
+                    "totalLooted": 6662,
                     "attacks": [
+                        {
+                            "attacker": {
+                                "tag": "#GPCYQG89Y",
+                                "name": "kutur18"
+                            },
+                            "destructionPercent": 100,
+                            "stars": 3
+                        },
+                        {
+                            "attacker": {
+                                "tag": "#R8YLLUPCY",
+                                "name": "in another life"
+                            },
+                            "destructionPercent": 66,
+                            "stars": 2
+                        },
                         {
                             "attacker": {
                                 "tag": "#G9CQG8R0Y",
@@ -276,6 +342,104 @@
                             "stars": 1
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "defender": {
+                "tag": "#220GU882J",
+                "name": "tigar",
+                "level": 17,
+                "badgeUrls": {
+                    "small": "https://api-assets.clashofclans.com/badges/70/Fni0X1C_loM07B1KnetDXhQfJOB2cVgHAqjd9mzdWY8.png",
+                    "large": "https://api-assets.clashofclans.com/badges/512/Fni0X1C_loM07B1KnetDXhQfJOB2cVgHAqjd9mzdWY8.png",
+                    "medium": "https://api-assets.clashofclans.com/badges/200/Fni0X1C_loM07B1KnetDXhQfJOB2cVgHAqjd9mzdWY8.png"
+                }
+            },
+            "attackCount": 2,
+            "districtCount": 7,
+            "districtsDestroyed": 1,
+            "districts": [
+                {
+                    "id": 70000000,
+                    "name": "Capital Peak",
+                    "districtHallLevel": 7,
+                    "destructionPercent": 0,
+                    "stars": 0,
+                    "attackCount": 0,
+                    "totalLooted": 0
+                },
+                {
+                    "id": 70000001,
+                    "name": "Barbarian Camp",
+                    "districtHallLevel": 4,
+                    "destructionPercent": 0,
+                    "stars": 0,
+                    "attackCount": 0,
+                    "totalLooted": 0
+                },
+                {
+                    "id": 70000002,
+                    "name": "Wizard Valley",
+                    "districtHallLevel": 3,
+                    "destructionPercent": 100,
+                    "stars": 3,
+                    "attackCount": 2,
+                    "totalLooted": 6787,
+                    "attacks": [
+                        {
+                            "attacker": {
+                                "tag": "#QYU9CCQ28",
+                                "name": "Oni Mask"
+                            },
+                            "destructionPercent": 100,
+                            "stars": 3
+                        },
+                        {
+                            "attacker": {
+                                "tag": "#QYU9CCQ28",
+                                "name": "Oni Mask"
+                            },
+                            "destructionPercent": 58,
+                            "stars": 1
+                        }
+                    ]
+                },
+                {
+                    "id": 70000003,
+                    "name": "Balloon Lagoon",
+                    "districtHallLevel": 3,
+                    "destructionPercent": 0,
+                    "stars": 0,
+                    "attackCount": 0,
+                    "totalLooted": 0
+                },
+                {
+                    "id": 70000004,
+                    "name": "Builder's Workshop",
+                    "districtHallLevel": 3,
+                    "destructionPercent": 0,
+                    "stars": 0,
+                    "attackCount": 0,
+                    "totalLooted": 0
+                },
+                {
+                    "id": 70000005,
+                    "name": "Dragon Cliffs",
+                    "districtHallLevel": 2,
+                    "destructionPercent": 0,
+                    "stars": 0,
+                    "attackCount": 0,
+                    "totalLooted": 0
+                },
+                {
+                    "id": 70000006,
+                    "name": "Golem Quarry",
+                    "districtHallLevel": 2,
+                    "destructionPercent": 0,
+                    "stars": 0,
+                    "attackCount": 0,
+                    "totalLooted": 0
                 }
             ]
         }
