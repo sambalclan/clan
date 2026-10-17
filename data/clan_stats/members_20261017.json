@@ -16,7 +16,7 @@
     },
     "clanLevel": 10,
     "clanPoints": 29350,
-    "clanBuilderBasePoints": 20696,
+    "clanBuilderBasePoints": 20651,
     "clanCapitalPoints": 1235,
     "capitalLeague": {
         "id": 85000006,
@@ -62,7 +62,7 @@
             "clanRank": 1,
             "previousClanRank": 1,
             "donations": 840,
-            "donationsReceived": 539,
+            "donationsReceived": 592,
             "playerHouse": {
                 "elements": [
                     {
@@ -110,11 +110,11 @@
                     "large": "https://api-assets.clashofclans.com/leaguetiers/326/vxV7LI0votsz0_n-8lW-Lag96D5HwKsEgEk_7247zC4.png"
                 }
             },
-            "trophies": 178,
+            "trophies": 193,
             "builderBaseTrophies": 2778,
             "clanRank": 2,
             "previousClanRank": 2,
-            "donations": 1055,
+            "donations": 1130,
             "donationsReceived": 551,
             "playerHouse": {
                 "elements": [
@@ -220,7 +220,7 @@
             "builderBaseTrophies": 3259,
             "clanRank": 4,
             "previousClanRank": 0,
-            "donations": 0,
+            "donations": 15,
             "donationsReceived": 0,
             "playerHouse": {
                 "elements": [
@@ -323,10 +323,10 @@
                 }
             },
             "trophies": 0,
-            "builderBaseTrophies": 2980,
+            "builderBaseTrophies": 2852,
             "clanRank": 6,
             "previousClanRank": 5,
-            "donations": 369,
+            "donations": 535,
             "donationsReceived": 50,
             "playerHouse": {
                 "elements": [
@@ -375,7 +375,7 @@
                     "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
                 }
             },
-            "trophies": 58,
+            "trophies": 85,
             "builderBaseTrophies": 2527,
             "clanRank": 7,
             "previousClanRank": 7,
@@ -429,11 +429,11 @@
                 }
             },
             "trophies": 18,
-            "builderBaseTrophies": 2002,
+            "builderBaseTrophies": 2078,
             "clanRank": 8,
             "previousClanRank": 8,
-            "donations": 200,
-            "donationsReceived": 3694,
+            "donations": 283,
+            "donationsReceived": 3925,
             "playerHouse": {
                 "elements": [
                     {
@@ -485,8 +485,8 @@
             "builderBaseTrophies": 2883,
             "clanRank": 9,
             "previousClanRank": 9,
-            "donations": 2624,
-            "donationsReceived": 481,
+            "donations": 2808,
+            "donationsReceived": 647,
             "playerHouse": {
                 "elements": [
                     {
@@ -592,7 +592,7 @@
             "clanRank": 11,
             "previousClanRank": 11,
             "donations": 929,
-            "donationsReceived": 712,
+            "donationsReceived": 789,
             "playerHouse": {
                 "elements": [
                     {
@@ -676,7 +676,7 @@
             "name": "Malz",
             "role": "admin",
             "townHallLevel": 12,
-            "expLevel": 110,
+            "expLevel": 111,
             "league": {
                 "id": 29000000,
                 "name": "Unranked",
@@ -750,7 +750,7 @@
             "builderBaseTrophies": 1965,
             "clanRank": 14,
             "previousClanRank": 18,
-            "donations": 2,
+            "donations": 4,
             "donationsReceived": 0,
             "playerHouse": {
                 "elements": [
@@ -780,7 +780,7 @@
         {
             "tag": "#R09Q8JLY9",
             "name": "D rend",
-            "role": "admin",
+            "role": "member",
             "townHallLevel": 11,
             "expLevel": 90,
             "league": {
@@ -909,7 +909,7 @@
             "builderBaseTrophies": 2153,
             "clanRank": 17,
             "previousClanRank": 22,
-            "donations": 76,
+            "donations": 78,
             "donationsReceived": 339,
             "playerHouse": {
                 "elements": [
