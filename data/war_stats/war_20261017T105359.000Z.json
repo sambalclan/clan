@@ -1,5 +1,5 @@
 {
-    "state": "preparation",
+    "state": "inWar",
     "teamSize": 10,
     "attacksPerMember": 2,
     "battleModifier": "none",
@@ -15,15 +15,33 @@
             "medium": "https://api-assets.clashofclans.com/badges/200/kMzbLtABCLcdaaEsZGiLn2Tvnv-nXvhq8z008z-gGz4.png"
         },
         "clanLevel": 10,
-        "attacks": 0,
-        "stars": 0,
-        "destructionPercentage": 0.0,
+        "attacks": 6,
+        "stars": 16,
+        "destructionPercentage": 50.8,
         "members": [
             {
                 "tag": "#R2YVRJRYY",
                 "name": "Banten fc",
                 "townhallLevel": 15,
                 "mapPosition": 4,
+                "attacks": [
+                    {
+                        "attackerTag": "#R2YVRJRYY",
+                        "defenderTag": "#GG0UUL9GC",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 5,
+                        "duration": 48
+                    },
+                    {
+                        "attackerTag": "#R2YVRJRYY",
+                        "defenderTag": "#R28UJ08QG",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 6,
+                        "duration": 120
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -45,6 +63,24 @@
                 "name": "Oni Mask",
                 "townhallLevel": 15,
                 "mapPosition": 3,
+                "attacks": [
+                    {
+                        "attackerTag": "#QYU9CCQ28",
+                        "defenderTag": "#LQP92JQC0",
+                        "stars": 2,
+                        "destructionPercentage": 55,
+                        "order": 3,
+                        "duration": 180
+                    },
+                    {
+                        "attackerTag": "#QYU9CCQ28",
+                        "defenderTag": "#QR9QR8GJJ",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 4,
+                        "duration": 139
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -52,6 +88,24 @@
                 "name": "PLUNDERER09",
                 "townhallLevel": 13,
                 "mapPosition": 6,
+                "attacks": [
+                    {
+                        "attackerTag": "#YLP0PRPLC",
+                        "defenderTag": "#R2CVLVLP2",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 1,
+                        "duration": 117
+                    },
+                    {
+                        "attackerTag": "#YLP0PRPLC",
+                        "defenderTag": "#L82Y0YR2J",
+                        "stars": 2,
+                        "destructionPercentage": 53,
+                        "order": 2,
+                        "duration": 124
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -116,14 +170,30 @@
                 "name": "carlin",
                 "townhallLevel": 11,
                 "mapPosition": 8,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#R2YVRJRYY",
+                    "defenderTag": "#R28UJ08QG",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 6,
+                    "duration": 120
+                }
             },
             {
                 "tag": "#QR9QR8GJJ",
                 "name": "uNeto",
                 "townhallLevel": 15,
                 "mapPosition": 1,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#QYU9CCQ28",
+                    "defenderTag": "#QR9QR8GJJ",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 4,
+                    "duration": 139
+                }
             },
             {
                 "tag": "#R2990PU9L",
@@ -137,14 +207,30 @@
                 "name": "LordLui",
                 "townhallLevel": 13,
                 "mapPosition": 5,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#YLP0PRPLC",
+                    "defenderTag": "#R2CVLVLP2",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 1,
+                    "duration": 117
+                }
             },
             {
                 "tag": "#L82Y0YR2J",
                 "name": "\u26a1RENEGADO GG\u26a1",
                 "townhallLevel": 15,
                 "mapPosition": 4,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#YLP0PRPLC",
+                    "defenderTag": "#L82Y0YR2J",
+                    "stars": 2,
+                    "destructionPercentage": 53,
+                    "order": 2,
+                    "duration": 124
+                }
             },
             {
                 "tag": "#9QJ2CYYPJ",
@@ -165,14 +251,30 @@
                 "name": "Lucao",
                 "townhallLevel": 15,
                 "mapPosition": 3,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#QYU9CCQ28",
+                    "defenderTag": "#LQP92JQC0",
+                    "stars": 2,
+                    "destructionPercentage": 55,
+                    "order": 3,
+                    "duration": 180
+                }
             },
             {
                 "tag": "#GG0UUL9GC",
                 "name": "thayna lindinha",
                 "townhallLevel": 8,
                 "mapPosition": 10,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#R2YVRJRYY",
+                    "defenderTag": "#GG0UUL9GC",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 5,
+                    "duration": 48
+                }
             }
         ]
     }
