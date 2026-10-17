@@ -15,9 +15,9 @@
             "medium": "https://api-assets.clashofclans.com/badges/200/kMzbLtABCLcdaaEsZGiLn2Tvnv-nXvhq8z008z-gGz4.png"
         },
         "clanLevel": 10,
-        "attacks": 7,
-        "stars": 19,
-        "destructionPercentage": 60.8,
+        "attacks": 13,
+        "stars": 30,
+        "destructionPercentage": 100.0,
         "members": [
             {
                 "tag": "#R2YVRJRYY",
@@ -123,6 +123,24 @@
                 "name": "Skyzo",
                 "townhallLevel": 13,
                 "mapPosition": 5,
+                "attacks": [
+                    {
+                        "attackerTag": "#G989PRQJL",
+                        "defenderTag": "#G2Q8PQGCJ",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 13,
+                        "duration": 108
+                    },
+                    {
+                        "attackerTag": "#G989PRQJL",
+                        "defenderTag": "#LVGJ0R9PP",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 14,
+                        "duration": 98
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -130,6 +148,24 @@
                 "name": "Zysss ur clown",
                 "townhallLevel": 15,
                 "mapPosition": 2,
+                "attacks": [
+                    {
+                        "attackerTag": "#QJUYL2L9V",
+                        "defenderTag": "#LQP92JQC0",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 11,
+                        "duration": 127
+                    },
+                    {
+                        "attackerTag": "#QJUYL2L9V",
+                        "defenderTag": "#L82Y0YR2J",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 12,
+                        "duration": 172
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -137,6 +173,16 @@
                 "name": "Skyzo",
                 "townhallLevel": 11,
                 "mapPosition": 7,
+                "attacks": [
+                    {
+                        "attackerTag": "#QR98PU0QJ",
+                        "defenderTag": "#R2990PU9L",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 15,
+                        "duration": 87
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -144,14 +190,40 @@
                 "name": "KING",
                 "townhallLevel": 11,
                 "mapPosition": 8,
-                "opponentAttacks": 0
+                "attacks": [
+                    {
+                        "attackerTag": "#GQLYPQ0U2",
+                        "defenderTag": "#LVGJ0R9PP",
+                        "stars": 2,
+                        "destructionPercentage": 71,
+                        "order": 8,
+                        "duration": 171
+                    }
+                ],
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#R28UJ08QG",
+                    "defenderTag": "#GQLYPQ0U2",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 9,
+                    "duration": 155
+                }
             },
             {
                 "tag": "#GPYC9PYJV",
                 "name": "andi",
                 "townhallLevel": 8,
                 "mapPosition": 10,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#GG0UUL9GC",
+                    "defenderTag": "#GPYC9PYJV",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 10,
+                    "duration": 66
+                }
             }
         ]
     },
@@ -164,22 +236,40 @@
             "medium": "https://api-assets.clashofclans.com/badges/200/oO4gb_bZueKPXu5MGBF-Tc36NRmBAyNIdJABVfFKDgU.png"
         },
         "clanLevel": 4,
-        "attacks": 0,
-        "stars": 0,
-        "destructionPercentage": 0.0,
+        "attacks": 2,
+        "stars": 6,
+        "destructionPercentage": 20.0,
         "members": [
             {
                 "tag": "#G2Q8PQGCJ",
                 "name": "Alexsander",
                 "townhallLevel": 12,
                 "mapPosition": 6,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#G989PRQJL",
+                    "defenderTag": "#G2Q8PQGCJ",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 13,
+                    "duration": 108
+                }
             },
             {
                 "tag": "#R28UJ08QG",
                 "name": "carlin",
                 "townhallLevel": 11,
                 "mapPosition": 8,
+                "attacks": [
+                    {
+                        "attackerTag": "#R28UJ08QG",
+                        "defenderTag": "#GQLYPQ0U2",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 9,
+                        "duration": 155
+                    }
+                ],
                 "opponentAttacks": 1,
                 "bestOpponentAttack": {
                     "attackerTag": "#R2YVRJRYY",
@@ -210,7 +300,15 @@
                 "name": "TBraga",
                 "townhallLevel": 11,
                 "mapPosition": 9,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#QR98PU0QJ",
+                    "defenderTag": "#R2990PU9L",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 15,
+                    "duration": 87
+                }
             },
             {
                 "tag": "#R2CVLVLP2",
@@ -232,14 +330,14 @@
                 "name": "\u26a1RENEGADO GG\u26a1",
                 "townhallLevel": 15,
                 "mapPosition": 4,
-                "opponentAttacks": 1,
+                "opponentAttacks": 2,
                 "bestOpponentAttack": {
-                    "attackerTag": "#YLP0PRPLC",
+                    "attackerTag": "#QJUYL2L9V",
                     "defenderTag": "#L82Y0YR2J",
-                    "stars": 2,
-                    "destructionPercentage": 53,
-                    "order": 2,
-                    "duration": 124
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 12,
+                    "duration": 172
                 }
             },
             {
@@ -262,21 +360,29 @@
                 "name": "Cognito",
                 "townhallLevel": 11,
                 "mapPosition": 7,
-                "opponentAttacks": 0
+                "opponentAttacks": 2,
+                "bestOpponentAttack": {
+                    "attackerTag": "#G989PRQJL",
+                    "defenderTag": "#LVGJ0R9PP",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 14,
+                    "duration": 98
+                }
             },
             {
                 "tag": "#LQP92JQC0",
                 "name": "Lucao",
                 "townhallLevel": 15,
                 "mapPosition": 3,
-                "opponentAttacks": 1,
+                "opponentAttacks": 2,
                 "bestOpponentAttack": {
-                    "attackerTag": "#QYU9CCQ28",
+                    "attackerTag": "#QJUYL2L9V",
                     "defenderTag": "#LQP92JQC0",
-                    "stars": 2,
-                    "destructionPercentage": 55,
-                    "order": 3,
-                    "duration": 180
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 11,
+                    "duration": 127
                 }
             },
             {
@@ -284,6 +390,16 @@
                 "name": "thayna lindinha",
                 "townhallLevel": 8,
                 "mapPosition": 10,
+                "attacks": [
+                    {
+                        "attackerTag": "#GG0UUL9GC",
+                        "defenderTag": "#GPYC9PYJV",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 10,
+                        "duration": 66
+                    }
+                ],
                 "opponentAttacks": 1,
                 "bestOpponentAttack": {
                     "attackerTag": "#R2YVRJRYY",
