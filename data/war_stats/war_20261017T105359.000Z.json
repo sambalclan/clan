@@ -15,9 +15,9 @@
             "medium": "https://api-assets.clashofclans.com/badges/200/kMzbLtABCLcdaaEsZGiLn2Tvnv-nXvhq8z008z-gGz4.png"
         },
         "clanLevel": 10,
-        "attacks": 6,
-        "stars": 16,
-        "destructionPercentage": 50.8,
+        "attacks": 7,
+        "stars": 19,
+        "destructionPercentage": 60.8,
         "members": [
             {
                 "tag": "#R2YVRJRYY",
@@ -49,6 +49,16 @@
                 "name": "not4ppl",
                 "townhallLevel": 15,
                 "mapPosition": 1,
+                "attacks": [
+                    {
+                        "attackerTag": "#GLJR89GYC",
+                        "defenderTag": "#9QJ2CYYPJ",
+                        "stars": 3,
+                        "destructionPercentage": 100,
+                        "order": 7,
+                        "duration": 95
+                    }
+                ],
                 "opponentAttacks": 0
             },
             {
@@ -237,7 +247,15 @@
                 "name": "\u2620LORD_PL@YBOY\u2620",
                 "townhallLevel": 15,
                 "mapPosition": 2,
-                "opponentAttacks": 0
+                "opponentAttacks": 1,
+                "bestOpponentAttack": {
+                    "attackerTag": "#GLJR89GYC",
+                    "defenderTag": "#9QJ2CYYPJ",
+                    "stars": 3,
+                    "destructionPercentage": 100,
+                    "order": 7,
+                    "duration": 95
+                }
             },
             {
                 "tag": "#LVGJ0R9PP",
