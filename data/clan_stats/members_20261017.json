@@ -1,7 +1,7 @@
 {
     "tag": "#2RVRP900V",
     "name": "Sambal balado",
-    "type": "inviteOnly",
+    "type": "open",
     "description": "[ID/EN] Sambal Clan Hideout\ud83c\uddee\ud83c\udde9\ud83c\uddec\ud83c\udde7\n\u2728Estimaciones [16-4-2025]                                       Website: sambalclan.github.\u0456\u043e/clan",
     "location": {
         "id": 32000006,
@@ -15,8 +15,8 @@
         "medium": "https://api-assets.clashofclans.com/badges/200/kMzbLtABCLcdaaEsZGiLn2Tvnv-nXvhq8z008z-gGz4.png"
     },
     "clanLevel": 10,
-    "clanPoints": 29750,
-    "clanBuilderBasePoints": 21390,
+    "clanPoints": 29350,
+    "clanBuilderBasePoints": 20696,
     "clanCapitalPoints": 1235,
     "capitalLeague": {
         "id": 85000006,
@@ -33,7 +33,7 @@
         "id": 48000006,
         "name": "Silver League I"
     },
-    "members": 26,
+    "members": 24,
     "memberList": [
         {
             "tag": "#GLJR89GYC",
@@ -110,11 +110,11 @@
                     "large": "https://api-assets.clashofclans.com/leaguetiers/326/vxV7LI0votsz0_n-8lW-Lag96D5HwKsEgEk_7247zC4.png"
                 }
             },
-            "trophies": 133,
+            "trophies": 178,
             "builderBaseTrophies": 2778,
             "clanRank": 2,
             "previousClanRank": 2,
-            "donations": 1005,
+            "donations": 1055,
             "donationsReceived": 551,
             "playerHouse": {
                 "elements": [
@@ -323,10 +323,10 @@
                 }
             },
             "trophies": 0,
-            "builderBaseTrophies": 3029,
+            "builderBaseTrophies": 2980,
             "clanRank": 6,
             "previousClanRank": 5,
-            "donations": 324,
+            "donations": 369,
             "donationsReceived": 50,
             "playerHouse": {
                 "elements": [
@@ -349,8 +349,8 @@
                 ]
             },
             "builderBaseLeague": {
-                "id": 44000025,
-                "name": "Iron League I"
+                "id": 44000024,
+                "name": "Iron League II"
             }
         },
         {
@@ -433,7 +433,7 @@
             "clanRank": 8,
             "previousClanRank": 8,
             "donations": 200,
-            "donationsReceived": 3572,
+            "donationsReceived": 3694,
             "playerHouse": {
                 "elements": [
                     {
@@ -485,8 +485,8 @@
             "builderBaseTrophies": 2883,
             "clanRank": 9,
             "previousClanRank": 9,
-            "donations": 2547,
-            "donationsReceived": 431,
+            "donations": 2624,
+            "donationsReceived": 481,
             "playerHouse": {
                 "elements": [
                     {
@@ -587,7 +587,7 @@
                     "large": "https://api-assets.clashofclans.com/leaguetiers/326/a3zg3PSqri2WrWD8tGzKs0hJ5OrND1Rx1SJ45f5O0gE.png"
                 }
             },
-            "trophies": 310,
+            "trophies": 379,
             "builderBaseTrophies": 2658,
             "clanRank": 11,
             "previousClanRank": 11,
@@ -644,8 +644,8 @@
             "builderBaseTrophies": 2332,
             "clanRank": 12,
             "previousClanRank": 16,
-            "donations": 122,
-            "donationsReceived": 0,
+            "donations": 175,
+            "donationsReceived": 77,
             "playerHouse": {
                 "elements": [
                     {
@@ -802,7 +802,7 @@
             "trophies": 8,
             "builderBaseTrophies": 2220,
             "clanRank": 15,
-            "previousClanRank": 20,
+            "previousClanRank": 19,
             "donations": 0,
             "donationsReceived": 0,
             "playerHouse": {
@@ -853,7 +853,7 @@
                 }
             },
             "trophies": 130,
-            "builderBaseTrophies": 2117,
+            "builderBaseTrophies": 2125,
             "clanRank": 16,
             "previousClanRank": 21,
             "donations": 0,
@@ -905,7 +905,7 @@
                     "large": "https://api-assets.clashofclans.com/leaguetiers/326/x1c7byHQmOHQVKGxAn1sqOW2XOCzTYW-e6OKjq-FBco.png"
                 }
             },
-            "trophies": 212,
+            "trophies": 412,
             "builderBaseTrophies": 2153,
             "clanRank": 17,
             "previousClanRank": 22,
@@ -1043,59 +1043,6 @@
             }
         },
         {
-            "tag": "#GCCJPYJUJ",
-            "name": "Satoru #",
-            "role": "admin",
-            "townHallLevel": 8,
-            "expLevel": 46,
-            "league": {
-                "id": 29000000,
-                "name": "Unranked",
-                "iconUrls": {
-                    "small": "https://api-assets.clashofclans.com/leagues/72/e--YMyIexEQQhE4imLoJcwhYn6Uy8KqlgyY3_kFV6t4.png",
-                    "tiny": "https://api-assets.clashofclans.com/leagues/36/e--YMyIexEQQhE4imLoJcwhYn6Uy8KqlgyY3_kFV6t4.png"
-                }
-            },
-            "leagueTier": {
-                "id": 105000004,
-                "name": "Barbarian League 4",
-                "iconUrls": {
-                    "small": "https://api-assets.clashofclans.com/leaguetiers/125/CoTrW7nhyiNIDCI4WHUK-0BuhOxibwd_tfASdtmMWFE.png",
-                    "large": "https://api-assets.clashofclans.com/leaguetiers/326/CoTrW7nhyiNIDCI4WHUK-0BuhOxibwd_tfASdtmMWFE.png"
-                }
-            },
-            "trophies": 0,
-            "builderBaseTrophies": 525,
-            "clanRank": 20,
-            "previousClanRank": 25,
-            "donations": 0,
-            "donationsReceived": 50,
-            "playerHouse": {
-                "elements": [
-                    {
-                        "type": "ground",
-                        "id": 82000000
-                    },
-                    {
-                        "type": "walls",
-                        "id": 82000048
-                    },
-                    {
-                        "type": "roof",
-                        "id": 82000011
-                    },
-                    {
-                        "type": "decoration",
-                        "id": 82000063
-                    }
-                ]
-            },
-            "builderBaseLeague": {
-                "id": 44000005,
-                "name": "Clay League V"
-            }
-        },
-        {
             "tag": "#R8YLLUPCY",
             "name": "in another life",
             "role": "member",
@@ -1119,7 +1066,7 @@
             },
             "trophies": 0,
             "builderBaseTrophies": 623,
-            "clanRank": 21,
+            "clanRank": 20,
             "previousClanRank": 26,
             "donations": 0,
             "donationsReceived": 0,
@@ -1153,7 +1100,7 @@
             "name": "andi",
             "role": "admin",
             "townHallLevel": 8,
-            "expLevel": 37,
+            "expLevel": 38,
             "league": {
                 "id": 29000000,
                 "name": "Unranked",
@@ -1172,7 +1119,7 @@
             },
             "trophies": 109,
             "builderBaseTrophies": 563,
-            "clanRank": 22,
+            "clanRank": 21,
             "previousClanRank": 27,
             "donations": 0,
             "donationsReceived": 280,
@@ -1225,7 +1172,7 @@
             },
             "trophies": 0,
             "builderBaseTrophies": 401,
-            "clanRank": 23,
+            "clanRank": 22,
             "previousClanRank": 28,
             "donations": 0,
             "donationsReceived": 0,
@@ -1255,59 +1202,6 @@
             }
         },
         {
-            "tag": "#G2P9P0VV0",
-            "name": "jeck83",
-            "role": "member",
-            "townHallLevel": 15,
-            "expLevel": 162,
-            "league": {
-                "id": 29000000,
-                "name": "Unranked",
-                "iconUrls": {
-                    "small": "https://api-assets.clashofclans.com/leagues/72/e--YMyIexEQQhE4imLoJcwhYn6Uy8KqlgyY3_kFV6t4.png",
-                    "tiny": "https://api-assets.clashofclans.com/leagues/36/e--YMyIexEQQhE4imLoJcwhYn6Uy8KqlgyY3_kFV6t4.png"
-                }
-            },
-            "leagueTier": {
-                "id": 105000000,
-                "name": "Unranked",
-                "iconUrls": {
-                    "small": "https://api-assets.clashofclans.com/leaguetiers/125/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png",
-                    "large": "https://api-assets.clashofclans.com/leaguetiers/326/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png"
-                }
-            },
-            "trophies": 0,
-            "builderBaseTrophies": 2936,
-            "clanRank": 24,
-            "previousClanRank": 29,
-            "donations": 50,
-            "donationsReceived": 0,
-            "playerHouse": {
-                "elements": [
-                    {
-                        "type": "ground",
-                        "id": 82000002
-                    },
-                    {
-                        "type": "walls",
-                        "id": 82000052
-                    },
-                    {
-                        "type": "roof",
-                        "id": 82000031
-                    },
-                    {
-                        "type": "decoration",
-                        "id": 82000064
-                    }
-                ]
-            },
-            "builderBaseLeague": {
-                "id": 44000024,
-                "name": "Iron League II"
-            }
-        },
-        {
             "tag": "#YVGYC09Y9",
             "name": "HaikaL Yagami",
             "role": "member",
@@ -1331,10 +1225,10 @@
             },
             "trophies": 0,
             "builderBaseTrophies": 3376,
-            "clanRank": 25,
+            "clanRank": 23,
             "previousClanRank": 0,
-            "donations": 77,
-            "donationsReceived": 83,
+            "donations": 154,
+            "donationsReceived": 136,
             "playerHouse": {
                 "elements": [
                     {
@@ -1384,7 +1278,7 @@
             },
             "trophies": 0,
             "builderBaseTrophies": 1855,
-            "clanRank": 26,
+            "clanRank": 24,
             "previousClanRank": 33,
             "donations": 45,
             "donationsReceived": 0,
