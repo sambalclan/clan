@@ -2,9 +2,9 @@
     "state": "ongoing",
     "startTime": "20261016T070000.000Z",
     "endTime": "20261019T070000.000Z",
-    "capitalTotalLoot": 62902,
+    "capitalTotalLoot": 68957,
     "raidsCompleted": 1,
-    "totalAttacks": 27,
+    "totalAttacks": 29,
     "enemyDistrictsDestroyed": 8,
     "offensiveReward": 0,
     "defensiveReward": 0,
@@ -44,10 +44,10 @@
         {
             "tag": "#QYU9CCQ28",
             "name": "Oni Mask",
-            "attacks": 4,
+            "attacks": 6,
             "attackLimit": 5,
             "bonusAttackLimit": 1,
-            "capitalResourcesLooted": 12453
+            "capitalResourcesLooted": 18508
         },
         {
             "tag": "#R8YLLUPCY",
@@ -364,7 +364,7 @@
                     "medium": "https://api-assets.clashofclans.com/badges/200/Fni0X1C_loM07B1KnetDXhQfJOB2cVgHAqjd9mzdWY8.png"
                 }
             },
-            "attackCount": 3,
+            "attackCount": 5,
             "districtCount": 7,
             "districtsDestroyed": 1,
             "districts": [
@@ -381,11 +381,27 @@
                     "id": 70000001,
                     "name": "Barbarian Camp",
                     "districtHallLevel": 4,
-                    "destructionPercent": 23,
-                    "stars": 0,
-                    "attackCount": 1,
-                    "totalLooted": 1260,
+                    "destructionPercent": 86,
+                    "stars": 2,
+                    "attackCount": 3,
+                    "totalLooted": 7315,
                     "attacks": [
+                        {
+                            "attacker": {
+                                "tag": "#QYU9CCQ28",
+                                "name": "Oni Mask"
+                            },
+                            "destructionPercent": 86,
+                            "stars": 2
+                        },
+                        {
+                            "attacker": {
+                                "tag": "#QYU9CCQ28",
+                                "name": "Oni Mask"
+                            },
+                            "destructionPercent": 42,
+                            "stars": 0
+                        },
                         {
                             "attacker": {
                                 "tag": "#G09UPV099",
