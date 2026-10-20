@@ -1,4 +1,4 @@
-name = "clash-of-clans-stats"
+name = "clan"
 main = "worker/index.js"
 compatibility_date = "2026-09-01"
 # Keep variables added in the Cloudflare dashboard when deploying from Git.
@@ -21,7 +21,7 @@ database_name = "coc-stats"
 
 [vars]
 # Clan tag including the '#'.
-CLAN_TAG = "#CPJQ2JV"
+CLAN_TAG = "#2RVRP900V"
 # RoyaleAPI proxy lets the CoC API key work from Cloudflare's changing IPs.
 # Whitelist 45.79.218.79 on your key at developer.clashofclans.com.
 COC_API_BASE = "https://cocproxy.royaleapi.dev/v1"
